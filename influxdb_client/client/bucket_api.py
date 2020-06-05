@@ -75,7 +75,7 @@ class BucketsApi(object):
 
         buckets = self._buckets_service.get_buckets(name=bucket_name)
 
-        if len(buckets.buckets) > 0:
+        if len(buckets.buckets) > 0 and buckets.buckets[0].name == bucket_name:
             return buckets.buckets[0]
         else:
             return None
